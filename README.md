@@ -4,6 +4,8 @@ An editorial guide synthesized from Steve Duda's three-part Pyramind session.
 
 The site is a single, self-contained HTML file with no build step or external dependencies.
 
+**[Read the guide](https://drdator.github.io/music-production-by-steve-duda/)**
+
 ## View locally
 
 Open `index.html` in a browser.

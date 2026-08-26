@@ -228,10 +228,37 @@
       margin: 1rem 0 1.3rem;
     }
 
-    .guide-body > p:nth-of-type(2) {
+    .guide-body .profile-bio {
+      max-width: 800px;
       font-size: clamp(1.35rem, 2.2vw, 1.75rem);
       line-height: 1.48;
       letter-spacing: -0.02em;
+    }
+
+    .profile-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      max-width: 800px;
+      margin: 1.8rem 0 3rem;
+    }
+
+    .guide-body .profile-links a {
+      padding: 0.72rem 0.9rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.4);
+      font: 700 0.68rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+    }
+
+    .guide-body .profile-links a:hover {
+      border-color: var(--signal);
+      background: white;
+      transform: translateY(-1px);
     }
 
     .guide-body h2 {
@@ -254,6 +281,11 @@
       letter-spacing: 0.14em;
     }
 
+    .guide-body h2[id="about"] {
+      margin-top: 0;
+    }
+
+    .guide-body h2[id="about"]::before { content: "INTRODUCTION"; }
     .guide-body h2[id="checklist"]::before { content: "FIELD NOTES"; }
     .guide-body h2[id="videos"]::before { content: "WATCH"; }
 
@@ -436,6 +468,14 @@
 <blockquote>
 <p>An editorial guide synthesized from Steve Duda&#39;s three-part Pyramind session. This is not a verbatim transcript or a text written by Duda. It organizes his demonstrations, opinions, and working methods into a practical production workflow.</p>
 </blockquote>
+<h2>Who is Steve Duda?</h2>
+<p class="profile-bio">Steve Duda is a producer, audio engineer, sound designer, and self-taught software developer whose career sits at the intersection of music and technology. His work spans studio projects with artists including Nine Inch Nails and A Perfect Circle, electronic releases with deadmau5 as BSOD, and the founding of Xfer Records. He is best known for creating Serum and a family of widely used production tools.</p>
+<nav class="profile-links" aria-label="Steve Duda links">
+  <a href="https://xferrecords.com/" target="_blank" rel="noopener noreferrer">Xfer Records ↗</a>
+  <a href="https://twitter.com/steve_duda" target="_blank" rel="noopener noreferrer">X / Twitter ↗</a>
+  <a href="https://soundcloud.com/steveduda" target="_blank" rel="noopener noreferrer">SoundCloud ↗</a>
+  <a href="https://www.facebook.com/steve.duda/" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+</nav>
 <p>Steve Duda&#39;s approach to music production is built around a simple idea: a clear result usually comes from deciding what matters and removing what competes with it. Tools are useful, but they are secondary to hierarchy, timing, and intent.</p>
 <p>His recurring questions are:</p>
 <ul>
@@ -694,7 +734,7 @@
   <script>
     const headings = [...document.querySelectorAll('.guide-body h2')];
     const ids = [
-      'intent', 'hierarchy', 'subtraction', 'eq', 'low-end', 'vocals',
+      'about', 'intent', 'hierarchy', 'subtraction', 'eq', 'low-end', 'vocals',
       'drums', 'architecture', 'master', 'compare', 'loudness',
       'sound-design', 'workflow', 'solutions', 'voice', 'checklist', 'videos'
     ];
